@@ -1,3 +1,11 @@
+/* Repeat till the Player reaches the winning position 100. 
+ * Note: In case the player position moves below 0, then the player restarts from 0
+ *
+ * @author: SAYANI KOLEY
+ * DATE: 10/06/2021
+ */
+
+
 public class SnakeAndLadderProblem {
     public static final int noPlay = 0;
     public static final int ladder = 1;
