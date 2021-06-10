@@ -16,16 +16,26 @@ public class SnakeAndLadderProblem {
                     break;
                 case ladder:
                     initial_position += roll_die;
-                    System.out.println("Its a LADDER! Player moves ahead by " + roll_die + " positions.");
+                    if (initial_position <= final_position) {
+                        System.out.println("Its a LADDER! Player moves ahead by " + roll_die + " positions.");
+                    }
+                    else if (initial_position > final_position){
+                        initial_position -= roll_die;
+                        System.out.println("Its a LADDER! But the player cannot move ahead by " + roll_die + " positions since it exceeds the final position.");
+                    }
                     break;
                 case snake:
                     initial_position -= roll_die;
                     System.out.println("Its a SNAKE! Player moves behind by " + roll_die + " positions.");
                     break;
             }
-            System.out.println("Position reached by the player: " +initial_position);
             if (initial_position < 0)
                 initial_position = 0;
+            if (initial_position == final_position) {
+                System.out.println("Position reached by the player: " + initial_position);
+                break;
+            }
+            System.out.println("Position reached by the player: " +initial_position);
         }
         System.out.println();
         System.out.println("Player completes the game!");
