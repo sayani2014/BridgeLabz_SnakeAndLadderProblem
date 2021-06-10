@@ -23,10 +23,11 @@ public class SnakeAndLadderProblem {
                     System.out.println("Its a SNAKE! Player moves behind by " + roll_die + " positions.");
                     break;
             }
-            //System.out.println(initial_position);
+            System.out.println("Position reached by the player: " +initial_position);
             if (initial_position < 0)
                 initial_position = 0;
         }
-        System.out.println("Player completes the game! Reached the winning position 100.");
+        System.out.println();
+        System.out.println("Player completes the game!");
     }
 }
