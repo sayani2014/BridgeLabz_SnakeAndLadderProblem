@@ -1,3 +1,10 @@
+/* Ensure the player gets to exact winning position 100. 
+ * Note in case the player position go above 100, the player stays in the same previous position till the player gets the exact number
+ *
+ * @author: SAYANI KOLEY
+ * DATE: 10/06/2021
+ */
+
 public class SnakeAndLadderProblem {
     public static final int noPlay = 0;
     public static final int ladder = 1;
