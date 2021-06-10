@@ -1,8 +1,5 @@
-/* The Player then checks for a Option. They are No Play, Ladder or Snake. 
- * Use ((RANDOM)) to check for Options along with rolling a die
- * In Case of No Play the player stays in the same position
- * In Case of Ladder the player moves ahead by the number of position received in the die
- * In Case of Snake the player moves behind by the number of position received in the die
+/* Ensure the player gets to exact winning position 100. 
+ * Note in case the player position go above 100, the player stays in the same previous position till the player gets the exact number
  *
  * @author: SAYANI KOLEY
  * DATE: 10/06/2021
@@ -15,27 +12,39 @@ public class SnakeAndLadderProblem {
 
     public static void main(String[] args) {
         int initial_position = 0;
-        int roll_die = (int)((Math.floor(Math.random() * 10)) % 6) + 1;
-        int check_option = (int)((Math.floor(Math.random() * 10)) % 3);
-        switch (check_option) {
-            case noPlay:
+        int final_position = 100;
+        while (initial_position <= final_position) {
+            int roll_die = (int) ((Math.floor(Math.random() * 10)) % 6) + 1;
+            int check_option = (int) ((Math.floor(Math.random() * 10)) % 3);
+            switch (check_option) {
+                case noPlay:
+                    //initial_position = 0;
+                    System.out.println("Its a NO PLAY! Player stays in the same position!");
+                    break;
+                case ladder:
+                    initial_position += roll_die;
+                    if (initial_position <= final_position) {
+                        System.out.println("Its a LADDER! Player moves ahead by " + roll_die + " positions.");
+                    }
+                    else if (initial_position > final_position){
+                        initial_position -= roll_die;
+                        System.out.println("Its a LADDER! But the player cannot move ahead by " + roll_die + " positions since it exceeds the final position.");
+                    }
+                    break;
+                case snake:
+                    initial_position -= roll_die;
+                    System.out.println("Its a SNAKE! Player moves behind by " + roll_die + " positions.");
+                    break;
+            }
+            if (initial_position < 0)
                 initial_position = 0;
-                System.out.println("Its a NO PLAY! Player stays in the same position!");
+            if (initial_position == final_position) {
+                System.out.println("Position reached by the player: " + initial_position);
                 break;
-            case ladder:
-                initial_position += roll_die;
-                System.out.println("Its a LADDER! Player moves ahead by " +roll_die+ " positions.");
-                break;
-            case snake:
-                initial_position -= roll_die;
-                System.out.println("Its a SNAKE! Player moves behind by " +roll_die+ " positions.");
-                break;
-            default:
-                System.out.println("Error! Please check!");
-                break;
+            }
+            System.out.println("Position reached by the player: " +initial_position);
         }
-        if(initial_position < 0)
-            initial_position = 0;
-        System.out.println("Current position of the player in the game is: " +initial_position);
+        System.out.println();
+        System.out.println("Player completes the game!");
     }
 }
