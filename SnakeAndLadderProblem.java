@@ -1,5 +1,4 @@
-/* Ensure the player gets to exact winning position 100. 
- * Note in case the player position go above 100, the player stays in the same previous position till the player gets the exact number
+/* Report the number of times the dice was played to win the game and also the position after every die role
  *
  * @author: SAYANI KOLEY
  * DATE: 10/06/2021
@@ -11,10 +10,12 @@ public class SnakeAndLadderProblem {
     public static final int snake = 2;
 
     public static void main(String[] args) {
+        int count = 0;
         int initial_position = 0;
-        int final_position = 100;
+        int final_position = 5;
         while (initial_position <= final_position) {
             int roll_die = (int) ((Math.floor(Math.random() * 10)) % 6) + 1;
+            count++;
             int check_option = (int) ((Math.floor(Math.random() * 10)) % 3);
             switch (check_option) {
                 case noPlay:
@@ -46,5 +47,6 @@ public class SnakeAndLadderProblem {
         }
         System.out.println();
         System.out.println("Player completes the game!");
+        System.out.println("The dice is rolled for " +count+ " times to win the game.");
     }
 }
