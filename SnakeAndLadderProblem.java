@@ -27,7 +27,7 @@ public class SnakeAndLadderProblem {
             if (initial_position < 0)
                 initial_position = 0;
         }
-	System.out.println();
+	      System.out.println();
         System.out.println("Player completes the game! Reached the winning position 100.");
     }
 }
