@@ -1,3 +1,9 @@
+/* Report the number of times the dice was played to win the game and also the position after every die role
+ *
+ * @author: SAYANI KOLEY
+ * DATE: 10/06/2021
+ */
+
 public class SnakeAndLadderProblem {
     public static final int noPlay = 0;
     public static final int ladder = 1;
