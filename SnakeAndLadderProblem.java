@@ -1,3 +1,13 @@
+/* The Player then checks for a Option. They are No Play, Ladder or Snake. 
+ * Use ((RANDOM)) to check for Options along with rolling a die
+ * In Case of No Play the player stays in the same position
+ * In Case of Ladder the player moves ahead by the number of position received in the die
+ * In Case of Snake the player moves behind by the number of position received in the die
+ *
+ * @author: SAYANI KOLEY
+ * DATE: 10/06/2021
+ */
+
 public class SnakeAndLadderProblem {
     public static final int noPlay = 0;
     public static final int ladder = 1;
